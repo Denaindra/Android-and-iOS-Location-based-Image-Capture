@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinKit.Views.AddNewItem">
+    <Grid Margin="0" RowSpacing="40" BackgroundColor="{DynamicResource BackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Text="Item" Grid.Row="0" Grid.Column="0" Margin="0,30,0,0" BackgroundColor="{DynamicResource BackgroundColor}" FontAttributes="Bold" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+            FontSize="Large" />
+        <StackLayout Orientation="Horizontal" Margin="10,0" Spacing="15" Grid.Row="1" Grid.Column="0">
+            <Label Text="Name: " TextColor="White" FontAttributes="Bold" WidthRequest="100" VerticalTextAlignment="Center" />
+            <Entry HeightRequest="50" Placeholder="Name" Text="{Binding Name}" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+        <StackLayout Margin="10,0" Spacing="15" Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
+            <Label Text="Type: " TextColor="White" FontAttributes="Bold" WidthRequest="100" VerticalTextAlignment="Center" />
+            <Picker x:Name="typePicker" SelectedItem="{Binding  PickerSelectedItem}" ItemsSource="{Binding PickerList}"  SelectedIndexChanged="ItemSelectedIndexChanged" Title="Select a Type" TextColor="Black" FontAttributes="Bold" HeightRequest="50" HorizontalOptions="FillAndExpand"   />
+        </StackLayout>
+        <StackLayout Margin="10,0" Spacing="15" Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
+            <Label Text="Serial no: " TextColor="White" FontAttributes="Bold" WidthRequest="100" VerticalTextAlignment="Center" />
+            <Entry HeightRequest="50" Text="{Binding SereialNumber}" Placeholder="Serial Number" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+        <StackLayout Margin="10,0" Spacing="10" Orientation="Horizontal" Grid.Row="4" Grid.Column="0">
+            <StackLayout HorizontalOptions="Start">
+                <Image x:Name="img" Source="{Binding PhotoSource}" HeightRequest="150" WidthRequest="150" BackgroundColor="{DynamicResource BackgroundColor}" />
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Take" Clicked="TakeClicked" HeightRequest="50" HorizontalOptions="FillAndExpand" Style="{DynamicResource GobalButton}" VerticalOptions="Start" />
+                    <Button Text="Reset" Clicked="ResetClicked" HeightRequest="50" HorizontalOptions="FillAndExpand" Style="{DynamicResource GobalButton}" VerticalOptions="Start" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand">
+                <StackLayout x:Name="mapView" HeightRequest="150" WidthRequest="150" BackgroundColor="Purple" />
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="It's here" Clicked="GetGeoLocation" HeightRequest="50" HorizontalOptions="FillAndExpand" Style="{DynamicResource GobalButton}" VerticalOptions="Start" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Margin="10,10" Spacing="15" Orientation="Horizontal" VerticalOptions="EndAndExpand" Grid.Row="5" Grid.Column="0">
+            <Button Text="Save" Clicked="SaveClicked" HeightRequest="60" Style="{DynamicResource GobalButton}" HorizontalOptions="FillAndExpand" />
+            <Button Text="Cancel" Clicked="CancleClicked" HeightRequest="60" Style="{DynamicResource GobalButton}" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

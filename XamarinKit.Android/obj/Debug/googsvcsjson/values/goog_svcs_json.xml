@@ -1,0 +1,1 @@
+<resources><string name="gcm_defaultSenderId" translatable="false">684123746532</string><string name="firebase_database_url" translatable="false">https://flashchat-d922d.firebaseio.com</string><string name="google_storage_bucket" translatable="false">flashchat-d922d.appspot.com</string></resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinKit.Views.ItemTypesPage">
+    <Grid RowSpacing="0" BackgroundColor="{DynamicResource BackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="70" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Text="Item Types" Margin="0,30,0,0" BackgroundColor="{DynamicResource BackgroundColor}" FontAttributes="Bold" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" Grid.Row="0"
+            Grid.Column="0" />
+        <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="{DynamicResource BackgroundColor}" Margin="20,0,20,20" Padding="0" CornerRadius="0" HasShadow="false" HorizontalOptions="FillAndExpand" BorderColor="White">
+            <ListView BackgroundColor="#0C89BF" HasUnevenRows="true" ItemsSource="{Binding Itemtypes}" ItemSelected="ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HeightRequest="50" Margin="10,10" VerticalOptions="FillAndExpand">
+                                <Label Text="{Binding TypeName}"  VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+        <StackLayout Grid.Row="2" Grid.Column="0" Margin="5,0,5,10" BackgroundColor="#0C89BF" Orientation="Horizontal">
+            <Button Text="Add" Clicked="AddClicked" HorizontalOptions="FillAndExpand" Style="{DynamicResource GobalButton}" />
+<!--            <Button Text="Delete" Clicked="DeleteClicked" Style="{DynamicResource GobalButton}" HorizontalOptions="FillAndExpand" />-->
+            <Button Text="Group" Clicked="BackClicked" Style="{DynamicResource GobalButton}" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinKit.Views.AddNewItemType">
+    <Grid Margin="0" RowSpacing="40" BackgroundColor="{DynamicResource BackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Text="Item Type" Grid.Row="0" Grid.Column="0" Margin="0,30,0,0" BackgroundColor="{DynamicResource BackgroundColor}" FontAttributes="Bold" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+            FontSize="Large" />
+       
+        <StackLayout Orientation="Horizontal" Margin="10,0" Spacing="15" Grid.Row="1" Grid.Column="0">
+            <Label Text="Name: " Style="{DynamicResource GobalLabel}" WidthRequest="100" VerticalTextAlignment="Center" />
+            <Entry Text="{Binding ItemName}" TextColor="Black" HeightRequest="50" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+       
+        <StackLayout Margin="10,0" Spacing="15" Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
+            <Label Text="Spec: " Style="{DynamicResource GobalLabel}" WidthRequest="100" VerticalTextAlignment="Center" />
+            <Entry Text="{Binding Specification}" TextColor="Black" HeightRequest="50" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+       
+        <StackLayout Margin="10,0" Spacing="15" Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
+            <Label Text="Type Photo: " Style="{DynamicResource GobalLabel}" />
+            <Image x:Name="img" Source="{Binding PhotoSource}"  Aspect="AspectFill" HeightRequest="150" WidthRequest="150" BackgroundColor="{DynamicResource BackgroundColor}" />
+            <Button Text="Take" Clicked="CameraClicked" HeightRequest="50" HorizontalOptions="FillAndExpand" Style="{DynamicResource GobalButton}" VerticalOptions="Start" />
+        </StackLayout>
+       
+        <StackLayout Margin="10,10" Spacing="15" Orientation="Horizontal" VerticalOptions="EndAndExpand" Grid.Row="4" Grid.Column="0">
+            <Button Text="Save" HeightRequest="60" Clicked="SaveItem"  Style="{DynamicResource GobalButton}" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Cancel"  HeightRequest="60"  Clicked="RemoveItem"  Style="{DynamicResource GobalButton}" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

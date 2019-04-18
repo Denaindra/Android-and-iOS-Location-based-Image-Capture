@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" x:Class="XamarinKit.Views.CustomView">
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout Spacing="10" Margin="12,0" Padding="30" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+            <Label Text="{Binding Title}" TextColor="Black" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Entry Placeholder="Group" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="50" x:Name="group" PlaceholderColor="Silver" TextColor="Gray">
+            </Entry>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Button Text="Add" HorizontalOptions="FillAndExpand" Style="{DynamicResource GobalButton}" TextColor="White" Clicked="AddGroup" />
+                <Button Text="Cancle" HorizontalOptions="FillAndExpand" Style="{DynamicResource GobalButton}" TextColor="White" Clicked="Close" />
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</pages:PopupPage>
